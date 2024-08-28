@@ -1,4 +1,4 @@
-package vn.edu.usth.usthweather;
+package vn.edu.usth.weather;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -62,4 +62,3 @@ public class WeatherActivity extends AppCompatActivity {
         Log.i(TAG, "Destroy");
     }
 }
-

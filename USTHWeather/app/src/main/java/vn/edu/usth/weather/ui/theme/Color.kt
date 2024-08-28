@@ -1,4 +1,4 @@
-package vn.edu.usth.usthweather.ui.theme
+package vn.edu.usth.weather.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
