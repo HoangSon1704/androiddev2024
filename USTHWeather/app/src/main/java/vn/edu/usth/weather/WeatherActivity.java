@@ -9,6 +9,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+
+
+
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "Weather";
     @Override
