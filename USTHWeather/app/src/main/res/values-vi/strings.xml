@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">USTHWeather</string>
+    <string name="title_activity_weather">WeatherActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Mon">Thu 2</string>
+    <string name="Tues">Thu 3</string>
+    <string name="Wed">Thu 4</string>
+    <string name="Thur">Thu 5</string>
+    <string name="Fri">Thu 6</string>
+    <string name="Sat">Thu 7</string>
+    <string name="Sun">Chu Nhat</string>
+    <string name="Partlycloudy">Co may\n23C - 35C</string>
+    <string name="Snowers">Co tuyet\n24C - 30C</string>
+    <string name="Rain">Co mua\n22C - 23C</string>
+    <string name="ScatteredSnowers">Tuyet yeu thuong\n22C - 27C</string>
+    <string name="MostlyCloudy">Nhieu may\n22C - 30C</string>
+    <string name="Thunderstorms">Bao thanh thien\n25C - 28C</string>
+    <string name="Scatteredthunderstorms">Bao cong\n24C - 27C</string>
+    <string name="Icon">icon</string>
+    <string name="Weather_icon">Weather icon</string>
+    <string name="Sunny">Nang cuc</string>
+    <string name="Snowy">Tuyet cuc</string>
+    <string name="Cloudy">May cuc</string>
+
+
+    <string name="Hanoi">Hanoi</string>
+    <string name="refresh_icon" />
+    <string name="setting_icon" />
+
+
+</resources>

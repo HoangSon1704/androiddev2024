@@ -25,5 +25,8 @@
 
 
     <string name="Hanoi">Hanoi</string>
+    <string name="refresh_icon" />
+    <string name="setting_icon" />
+
 
 </resources>

@@ -1,15 +1,20 @@
 package vn.edu.usth.weather;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class WeatherActivity extends AppCompatActivity {
@@ -28,7 +33,36 @@ public class WeatherActivity extends AppCompatActivity {
 
         ForecastFragment firstFragment = new ForecastFragment();
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(WeatherActivity.this, R.raw.nhactinh);
+        mediaPlayer.start();
+
         getSupportFragmentManager().beginTransaction().add(R.id.main, firstFragment).commit();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_bar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.settings:
+                Intent intent = new Intent(this, PrefActivity.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
