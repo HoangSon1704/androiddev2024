@@ -3,6 +3,9 @@ package vn.edu.usth.weather;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.MenuItem;
 
@@ -18,6 +21,7 @@ import android.widget.Toast;
 
 
 public class WeatherActivity extends AppCompatActivity {
+    private RefreshTay refreshTay;
     private static final String TAG = "Weather";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,16 @@ public class WeatherActivity extends AppCompatActivity {
         mediaPlayer.start();
 
         getSupportFragmentManager().beginTransaction().add(R.id.main, firstFragment).commit();
+
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+         refreshTay = new RefreshTay(handler);
     }
 
     @Override
@@ -52,7 +66,7 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh:
-                Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+                    refreshTay.NetworkRequest();
                 return true;
 
             case R.id.settings:
